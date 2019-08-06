@@ -34,18 +34,18 @@
 })();
 
 (() => {
+    let data; // any 型
+    data = 10.5; // number 型とみなされる
+    console.log(data.toFixed(0)); // number 型だから呼ぶことができる
+    data = 'hoge'; // string 型とみなされる
+    console.log(data.charAt(0)); // string 型だから呼ぶことができる
+})();
+
+(() => {
     let mail: string = 'admin@example.com';
     let msg = `レビュアー募集中!
     書籍のご感想をぜひお聞かせください。
     弊社サポートサイト、SNSなどで紹介させていただきます。
     (送付先 : ${mail})`; // テンプレート文字列 & 埋め込み可能
     console.log(msg)
-})();
-
-(() => {
-    let data; // any 型
-    data = 10.5; // number 型とみなされる
-    console.log(data.toFixed(0)); // number 型だから呼ぶことができる
-    data = 'hoge'; // string 型とみなされる
-    console.log(data.charAt(0)); // string 型だから呼ぶことができる
 })();
