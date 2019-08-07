@@ -49,3 +49,60 @@
 (送付先 : ${mail})`; // テンプレート文字列 & 埋め込み可能
     console.log(msg)
 }
+
+
+function show(result: string) {
+    return `結果は${result}`;
+}
+
+{
+    console.log(show(<any>100));
+    console.log(show('100' as any));
+}
+
+function toInt(value: number) : string {
+    return value.toFixed(0);
+}
+
+{
+    console.log(toInt(<any>'hoge')); // コンパイルエラーにならないが実行時エラーになる -> toFixed が呼び出せないため
+}
+
+{
+    if (true) {
+        var i: number = 1; // let だとブロックスコープが働き、
+    }
+    console.log(i); // ここで呼び出せなくなる
+}
+
+{ // let は同じスコープ内での重複した変数宣言を認めない
+    let let_x: number = 1;
+    let let_x: number = 1; // Cannot redeclare block-scoped variable 'let_x'.
+}
+
+{ // var でも異なるデータ型で同名の変数宣言はできない
+    var let_x: number = 1;
+    var let_x: string = 'hoge'; // Subsequent variable declarations must have the same type.  Variable 'let_x' must be of type 'number', but here has type
+}
+
+{
+    const DATA: number = 100;
+    DATA = 108; // Cannot assign to 'DATA' because it is a constant.
+    console.log(DATA)
+}
+
+{ // const は「再代入できない」であって、「変更できない」ではない
+    const DATA = [1, 2, 3];
+    DATA[0] = 10; // できる
+}
+
+{
+    const DATA = [1, 2, 3];
+    DATA = [10, 2, 3]; // これはできない
+    console.log(DATA)
+}
+
+{ // 配列
+    let data: string[] = ['Java', 'Python', 'PHP', 'Ruby', 'C#'];
+    console.log(data[0]);
+}

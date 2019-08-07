@@ -42,3 +42,48 @@
     var msg = "\u30EC\u30D3\u30E5\u30A2\u30FC\u52DF\u96C6\u4E2D!\n\u66F8\u7C4D\u306E\u3054\u611F\u60F3\u3092\u305C\u3072\u304A\u805E\u304B\u305B\u304F\u3060\u3055\u3044\u3002\n\u5F0A\u793E\u30B5\u30DD\u30FC\u30C8\u30B5\u30A4\u30C8\u3001SNS\u306A\u3069\u3067\u7D39\u4ECB\u3055\u305B\u3066\u3044\u305F\u3060\u304D\u307E\u3059\u3002\n(\u9001\u4ED8\u5148 : " + mail + ")"; // テンプレート文字列 & 埋め込み可能
     console.log(msg);
 }
+function show(result) {
+    return "\u7D50\u679C\u306F" + result;
+}
+{
+    console.log(show(100));
+    console.log(show('100'));
+}
+function toInt(value) {
+    return value.toFixed(0);
+}
+{
+    console.log(toInt('hoge')); // コンパイルエラーにならないが実行時エラーになる -> toFixed が呼び出せないため
+}
+{
+    if (true) {
+        var i = 1; // let だとブロックスコープが働き、
+    }
+    console.log(i); // ここで呼び出せなくなる
+}
+{ // let は同じスコープ内での重複した変数宣言を認めない
+    var let_x_1 = 1;
+    var let_x_2 = 1; // Cannot redeclare block-scoped variable 'let_x'.
+}
+{ // var でも異なるデータ型で同名の変数宣言はできない
+    var let_x = 1;
+    var let_x = 'hoge'; // Subsequent variable declarations must have the same type.  Variable 'let_x' must be of type 'number', but here has type
+}
+{
+    var DATA = 100;
+    DATA = 108; // Cannot assign to 'DATA' because it is a constant.
+    console.log(DATA);
+}
+{ // const は「再代入できない」であって、「変更できない」ではない
+    var DATA = [1, 2, 3];
+    DATA[0] = 10; // できる
+}
+{
+    var DATA = [1, 2, 3];
+    DATA = [10, 2, 3]; // これはできない
+    console.log(DATA);
+}
+{ // 配列
+    var data = ['Java', 'Python', 'PHP', 'Ruby', 'C#'];
+    console.log(data[0]);
+}
