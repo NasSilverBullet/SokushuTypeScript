@@ -1,0 +1,24 @@
+{
+  "name": "sokushutypescript",
+  "version": "1.0.0",
+  "description": "Sokushu TypeScript",
+  "main": "hello.js",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NasSilverBullet/SokushuTypeScript.git"
+  },
+  "author": "nas.silver.bullet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NasSilverBullet/SokushuTypeScript/issues"
+  },
+  "homepage": "https://github.com/NasSilverBullet/SokushuTypeScript#readme"
+}
