@@ -84,25 +84,3 @@ function toInt(value: number) : string {
     var let_x: number = 1;
     var let_x: string = 'hoge'; // Subsequent variable declarations must have the same type.  Variable 'let_x' must be of type 'number', but here has type
 }
-
-{
-    const DATA: number = 100;
-    DATA = 108; // Cannot assign to 'DATA' because it is a constant.
-    console.log(DATA)
-}
-
-{ // const は「再代入できない」であって、「変更できない」ではない
-    const DATA = [1, 2, 3];
-    DATA[0] = 10; // できる
-}
-
-{
-    const DATA = [1, 2, 3];
-    DATA = [10, 2, 3]; // これはできない
-    console.log(DATA)
-}
-
-{ // 配列
-    let data: string[] = ['Java', 'Python', 'PHP', 'Ruby', 'C#'];
-    console.log(data[0]);
-}

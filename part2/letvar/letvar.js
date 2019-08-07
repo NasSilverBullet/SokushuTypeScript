@@ -69,21 +69,3 @@ function toInt(value) {
     var let_x = 1;
     var let_x = 'hoge'; // Subsequent variable declarations must have the same type.  Variable 'let_x' must be of type 'number', but here has type
 }
-{
-    var DATA = 100;
-    DATA = 108; // Cannot assign to 'DATA' because it is a constant.
-    console.log(DATA);
-}
-{ // const は「再代入できない」であって、「変更できない」ではない
-    var DATA = [1, 2, 3];
-    DATA[0] = 10; // できる
-}
-{
-    var DATA = [1, 2, 3];
-    DATA = [10, 2, 3]; // これはできない
-    console.log(DATA);
-}
-{ // 配列
-    var data = ['Java', 'Python', 'PHP', 'Ruby', 'C#'];
-    console.log(data[0]);
-}
