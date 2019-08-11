@@ -75,14 +75,28 @@
     console.log(Figure.circle(5)); // 78.53975
 }
 
- // 名前空間
+// 名前空間
 namespace MainApp {
-    export class Hoge {}
+    export class Hoge {} // export keyword がないと名前空間配下の要素へアクセスできない
     export function foo() {}
+    function bar() {}
 }
 let h = new MainApp.Hoge();
 MainApp.foo();
+MainApp.bar(); // Property 'bar' does not exist on type 'typeof MainApp'.
 
+// 階層構造のある名前空間
+namespace Wings.MainApp {
+    export class Hoge {}
+    export function foo() {}
+}
+let j = new Wings.MainApp.Hoge();
+Wings.MainApp.foo();
 
-
-
+// namespace のネスト(複数を含めるときはこちらのほうが良さそう
+namespace Wings2 {
+    export namespace MainApp {
+        export class Hoge{};
+        export function foo() {};
+    };
+}
